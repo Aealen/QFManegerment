@@ -15,7 +15,6 @@
         </template>
         <el-menu-item-group>
           <el-menu-item index="1-1" @click="getCurrWorkSpace">用户列表</el-menu-item>
-          <el-menu-item index="1-2" @click="getCurrWorkSpace">添加用户</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
 
