@@ -1,14 +1,16 @@
 <template>
   <div id="app">
-    <SideMenu class="sideMenu"/>
+<!--    <SideMenu class="sideMenu"/>-->
+    <Login></Login>
   </div>
 </template>
 
 <script>
 import SideMenu from "./components/SideMenu";
+import Login from "./components/Login";
 export default {
   name: 'App',
-  components: {SideMenu}
+  components: {Login, SideMenu}
 }
 </script>
 
@@ -17,9 +19,14 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /*text-align: center;*/
   color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  height: 100%;
+  /*margin-top: 60px;*/
+}
+.pageHeader{
+  width: 100%;
 }
 .sideMenu{
   height: 100%;
