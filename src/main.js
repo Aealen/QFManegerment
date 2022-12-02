@@ -8,10 +8,12 @@ import axios from 'axios'
 import 'element-ui/lib/theme-chalk/index.css';
 import VueAxios from 'vue-axios'
 import ElementUI from 'element-ui';
+import jquery from 'jquery'
 
 Vue.use(VueAxios, axios)
 Vue.use(VueSession)
 Vue.use(ElementUI);
+Vue.use(jquery)
 
 
 Vue.prototype.$axios = axios
