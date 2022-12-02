@@ -25,10 +25,20 @@
         >
       </el-table-column>
 
+<el-table-column
+        label="操作"
+        width="100"
+        >
+    <template slot-scope="scope">
+    <el-button  @click="change(scope.$index,scope.$row)">编辑余额</el-button>
+    </template>
+      </el-table-column>
+
         <el-table-column
         label="操作"
         width="100"
-        ><template slot-scope="scope">
+        >
+    <template slot-scope="scope">
     <el-button type="danger" @click="open(scope.$index,scope.$row)">删除用户</el-button>
     </template>
       </el-table-column>
@@ -44,6 +54,42 @@ export default {
         }
       },
       methods:{
+        change(index,row){
+        console.log(this.$data.tableData[index].Uid)  
+        this.$prompt('请输入余额', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+        }).then(({ value }) => {
+          if(parseFloat(value)!==parseFloat(value)){
+            this.$message({
+            type: 'info',
+            message: '数据错误'
+          }); 
+          }else{
+          this.$message({
+            type: 'success',
+          });
+                      this.$axios({
+              method:'put',
+              url: '/ff14/login/upBalance?Uid='+this.$data.tableData[index].Uid+'&Balance='+parseFloat(value),
+            }).then(res=>{
+              this.$axios({
+                    method:'get',
+                    url: "/ff14/login/getAllUsers",
+                }).then(res=>{
+                    console.log(res.data);
+                    this.tableData=res.data.data
+                })
+            })
+
+          }
+        }).catch(() => {
+          
+        });
+
+
+
+        },
          open(index,row) {
         console.log(index)
         console.log(this.$data.tableData[index].Uid)
