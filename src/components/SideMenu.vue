@@ -24,8 +24,8 @@
           <span slot="title">商品管理</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="3" @click="getCurrWorkSpace">商品列表</el-menu-item>
-          <el-menu-item index="4" @click="getCurrWorkSpace">添加商品</el-menu-item>
+          <el-menu-item index="2-1" @click="getCurrWorkSpace">商品列表</el-menu-item>
+          <el-menu-item index="2-2" @click="getCurrWorkSpace">添加商品</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
 <!--      <el-menu-item index="3" disabled>-->
