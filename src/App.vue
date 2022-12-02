@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <SideMenu class="sideMenu"/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import SideMenu from "./components/SideMenu";
+import SideMenu from "./components/WorkSpace";
 export default {
   name: 'App',
   components: {SideMenu}

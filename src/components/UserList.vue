@@ -58,11 +58,11 @@ export default {
           });
                       this.$axios({
                 method:'delete',
-                url: 'http://localhost:8096/ff14/login/delLogin?Uid='+this.$data.tableData[index].Uid,
+                url: '/ff14/login/delLogin?Uid='+this.$data.tableData[index].Uid,
                 }).then(res=>{
                 this.$axios({
                     method:'get',
-                    url: "http://localhost:8096/ff14/login/getAllUsers",
+                    url: "/ff14/login/getAllUsers",
                 }).then(res=>{
                     console.log(res.data);
                     this.tableData=res.data.data
@@ -72,14 +72,14 @@ export default {
           this.$message({
             type: 'info',
             message: '已取消删除'
-          });          
+          });
         });
       }
       },
     beforeCreate(){
         this.$axios({
             method:'get',
-            url: "http://localhost:8096/ff14/login/getAllUsers",
+            url: "/ff14/login/getAllUsers",
         }).then(res=>{
             console.log(res.data);
             this.tableData=res.data.data
