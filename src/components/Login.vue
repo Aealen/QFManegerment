@@ -56,7 +56,7 @@ export default {
           sessionStorage.setItem('uemail',response.data.data[0].EMail);
           sessionStorage.setItem('uicon',response.data.data[0].Image);
           sessionStorage.setItem('ubalance',response.data.data[0].balance);
-          //跳转到个人信息页
+
            this.$router.push('/workspace');
 
         }else{
