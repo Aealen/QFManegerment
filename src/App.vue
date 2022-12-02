@@ -1,13 +1,14 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <SideMenu class="sideMenu"/>
   </div>
 </template>
 
 <script>
+import SideMenu from "./components/SideMenu";
 export default {
-  name: 'App'
+  name: 'App',
+  components: {SideMenu}
 }
 </script>
 
@@ -19,5 +20,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.sideMenu{
+  height: 100%;
 }
 </style>
