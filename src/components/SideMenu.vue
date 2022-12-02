@@ -1,7 +1,8 @@
 <template>
   <div>
-
-    <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+  <el-container>
+  <el-aside width="220px">
+<el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
       <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
         <el-radio-button :label="false">展开</el-radio-button>
         <el-radio-button :label="true">收起</el-radio-button>
@@ -15,7 +16,6 @@
         <el-menu-item-group>
           <el-menu-item index="1-1" @click="getCurrWorkSpace">用户列表</el-menu-item>
           <el-menu-item index="1-2" @click="getCurrWorkSpace">添加用户</el-menu-item>
-          <el-menu-item index="1-3" @click="getCurrWorkSpace">注销</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
 
@@ -29,21 +29,23 @@
           <el-menu-item index="2-2" @click="getCurrWorkSpace">添加商品</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
-<!--      <el-menu-item index="3" disabled>-->
-<!--        <i class="el-icon-document"></i>-->
-<!--        <span slot="title">导航三</span>-->
-<!--      </el-menu-item>-->
-<!--      <el-menu-item index="4">-->
-<!--        <i class="el-icon-setting"></i>-->
-<!--        <span slot="title">导航四</span>-->
-<!--      </el-menu-item>-->
     </el-menu>
-</div>
 
+
+  </el-aside>
+  <el-main>
+    <div>
+      <UserList></UserList>
+    </div>
+  </el-main>
+</el-container>
+</div>
 </template>
 
 <script>
+import UserList from '@/components/UserList'
 export default {
+  components:{UserList},
   data() {
     return {
       isCollapse: false,
@@ -62,7 +64,8 @@ export default {
     handleClose(key, keyPath) {
       console.log(key, keyPath);
     }
-  }
+  },
+
 }
 </script>
 

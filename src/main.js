@@ -17,7 +17,6 @@ Vue.use(ElementUI);
 Vue.prototype.$axios = axios
 Vue.prototype.$VueSession = VueSession
 Vue.config.productionTip = false
-axios.defaults.baseURL='http://10.80.0.26:8096';
 
 /* eslint-disable no-new */
 new Vue({
