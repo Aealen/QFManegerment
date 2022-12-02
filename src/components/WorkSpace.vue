@@ -30,11 +30,15 @@
         </el-menu-item-group>
       </el-submenu>
     </el-menu>
-
-
   </el-aside>
   <el-main>
-    <div>
+    <div v-if="currWorkSpace=='2-1'">
+      <WareList></WareList>
+    </div>
+    <div v-if="currWorkSpace=='2-2'">
+      <AddWare></AddWare>
+    </div>
+    <div v-if="currWorkSpace=='1-1'">
       <UserList></UserList>
     </div>
   </el-main>
@@ -44,8 +48,10 @@
 
 <script>
 import UserList from '@/components/UserList'
+import AddWare from '@/components/AddWare'
+import WareList from '@/components/WareList'
 export default {
-  components:{UserList},
+  components:{UserList,AddWare,WareList},
   data() {
     return {
       isCollapse: false,
