@@ -13,10 +13,6 @@ export default new Router({
       name: 'HelloWorld',
       component: HelloWorld
     },{
-      path:'/sidemenu',
-      name:'Login',
-      component:Login
-    },{
       path:'/workspace',
       component:SideMenu
     }
