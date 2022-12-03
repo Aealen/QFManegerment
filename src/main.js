@@ -19,8 +19,22 @@ Vue.use(jquery)
 Vue.prototype.$axios = axios
 Vue.prototype.$VueSession = VueSession
 Vue.config.productionTip = false
-axios.defaults.baseURL='http://10.80.0.26:8096';
+// axios.defaults.baseURL='http://10.80.0.26:8096';
+axios.defaults.baseURL='http://localhost:8096';
 /* eslint-disable no-new */
+
+var axiosInstance =axios.create({
+  headers:{
+    "content-type": "multipart/form-data",
+  }
+})
+
+axiosInstance.defaults.headers.post["Content-Type"] = "application/json";
+
+
+Vue.prototype.$axiosInstance=axiosInstance;
+
+
 new Vue({
   el: '#app',
   router,

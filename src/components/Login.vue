@@ -1,21 +1,5 @@
 <template>
 <div class="maindiv">
-<!--  <h1>登陆</h1>-->
-<!--  <el-input v-if="loginType==0" class="inputSty" v-model="username" placeholder="请输入用户名"></el-input><br>-->
-<!--  <el-input v-if="loginType==1" class="inputSty" v-model="email" placeholder="请输入邮箱"></el-input>-->
-<!--  <el-input class="inputSty" v-model="password" placeholder="请输入密码" show-password></el-input><br>-->
-
-<!--&lt;!&ndash;  <div>&ndash;&gt;-->
-<!--&lt;!&ndash;    <el-switch&ndash;&gt;-->
-<!--&lt;!&ndash;      style="display: block"&ndash;&gt;-->
-<!--&lt;!&ndash;      v-model="loginType"&ndash;&gt;-->
-<!--&lt;!&ndash;      active-color="#13ce66"&ndash;&gt;-->
-<!--&lt;!&ndash;      inactive-color="#ff4949"&ndash;&gt;-->
-<!--&lt;!&ndash;      active-text="邮箱登陆"&ndash;&gt;-->
-<!--&lt;!&ndash;      inactive-text="用户名登陆">&ndash;&gt;-->
-<!--&lt;!&ndash;    </el-switch>&ndash;&gt;-->
-<!--&lt;!&ndash;  </div>&ndash;&gt;-->
-<!--  <el-button @click="login" type="primary">登陆</el-button>-->
 
   <section class="forms">
     <div class="container">
@@ -58,7 +42,7 @@
 
       <!-- copyright -->
       <div class="copy-right">
-        <p>&copy; 2022 网游商城后台管理系统. All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">俞俊鹏 钱欣涵</a></p>
+        <p>&copy; 2022 网游商城后台管理系统. All rights reserved | Design by <a href="#" target="_blank">俞俊鹏 钱欣涵</a></p>
       </div>
       <!-- //copyright -->
     </div>

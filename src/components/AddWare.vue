@@ -1,5 +1,6 @@
 <template>
-<div>  <el-form :model="form" label-width="80px">
+<div>
+  <el-form :model="form" label-width="80px">
     <el-form-item label="商品名称">
         <el-input v-model="form.WareName"></el-input>
     </el-form-item>
@@ -22,7 +23,7 @@
   :limit="1"
   :on-exceed="handleExceed"
   :file-list="fileList"
-  :on-success="(response, file, fileList)=>a(response, file, fileList)">
+  :on-success="(response)=>a(response)">
   <el-button size="small" type="primary">点击图片</el-button>
   <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
 </el-upload>
@@ -56,6 +57,8 @@ export default {
             this.form.Picture=response
         },
       onSubmit() {
+
+
         if(this.$data.form.WareName==""||this.$data.form.Wareprice==0||this.$data.form.Picture==null||this.$data.form.Waretype==0){
             console.log("aaaaaaa")
             this.$alert('请填写完整内容', '', {
