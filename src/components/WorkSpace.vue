@@ -8,6 +8,10 @@
         <el-radio-button :label="true">收起</el-radio-button>
       </el-radio-group>
 
+      <el-menu-item>
+        当前用户:{{currUser}}
+      </el-menu-item>
+
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-user"></i>
@@ -28,6 +32,10 @@
           <el-menu-item index="2-2" @click="getCurrWorkSpace">添加商品</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
+      <el-menu-item>
+        <el-button type="text" @click="sessionStorage.clear();"><router-link to="/">注销</router-link></el-button>
+
+  </el-menu-item>
     </el-menu>
   </el-aside>
   <el-main>
@@ -54,6 +62,7 @@ export default {
   data() {
     return {
       isCollapse: false,
+      currUser:sessionStorage.getItem('uname'),
       currWorkSpace:0,//1-1 用户列表  1-2添加用户  2-1商品列表 2-2添加商品
 
     };
